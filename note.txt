@@ -1,0 +1,27 @@
+HTTP request types
+GET - to get data from a sercer
+POST - to send data to a server
+PUT - to send data to a server to modify data
+DELETE - to delete data
+PATCH - like put/post but its primary purpose is to apply partial modifications to the resource. 
+
+url data, size data not suitable for put but post is
+
+Dev enviroment packages should use --save-dev during install
+
+"start": "node index.js",
+"dev": "nodemon index.js" are added manually
+
+can use code node_modules/.bin/index.js
+
+custom scripts should run "npm run dev"
+
+//////////////////////////////////////////////////////////////////////////
+
+RESTful APIs
+
+Routing - 
+
+Status codes
+201 - successfull post operation status code
+400 - bad request status code
