@@ -18,6 +18,15 @@ custom scripts should run "npm run dev"
 
 //////////////////////////////////////////////////////////////////////////
 
+start a project 
+npm init -y
+
+install mongoose 
+npm i mongoose
+
+npm install express
+npm install --save-dev nodemon
+
 RESTful APIs
 
 Routing - 

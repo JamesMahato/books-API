@@ -1,9 +1,19 @@
 require('dotenv').config()
 const exp = require('express');
 let books = require('./data/books')
+const mongoose = require('mongoose')
 const broute = require('./routes/book-routes')
 
 const port = process.env.PORT
+
+mongoose.connect('mongodb://127.0.0.1:27017/demo')
+    .then(() => {
+        console.log('Connected to mongodb database server');
+    })
+    .catch((err) => 
+        console.log(err)
+    )
+
 const app = exp();
 
 // Middle Wear - software that lies between an operating system and the applications running on it(Cerates a response for a request)
@@ -17,7 +27,21 @@ app.get('/', (request, response) => {
     response.send('Hello')
 });
 
-app.use('/api/books', broute)
+// main path
+app.use('/books', broute)
+
+// Error Handling middlewear
+app.use((err, req, res, next) => {
+    console.error(err);
+    if(err.name === 'ValidationError') res.status(400)
+    else if (err.name == "CastError") res.status(400)
+    res.json({ error: err.message })
+})
+
+// Unkown Path
+app.use((req, res, next) => {
+    res.status(404).json({error:"Path not found"})
+})
 
 app.listen(port, () => {
     console.log(`Server is running at port ${port}`);
