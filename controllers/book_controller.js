@@ -1,3 +1,4 @@
+// const books = require('../data/books');
 const Book = require('../models/Book');
 
 const getAllbooks = (req, res, next) => {
@@ -32,22 +33,27 @@ const getAbook = (req, res, next) => {
         .catch(next)
 }
 
-const updateAbook = (res, req, next) => {
+const updateAbook = (req, res, next) => {
     Book.findByIdAndUpdate(
         req.params.book_id,
         { $set : req.body },
-        { new : true}
+        { new : true }
     )
     .then(updated => res.json(updated))
     // .catch(err => console.log(err))
     .catch(next)
 }
 
-const deleteAbook = (res,req,next) => {
-    Book.findOneAndDelete(req.params.book_id)
-        .then(reply => res.status(204).end())
-        // .catch(err => console.log(err))
+const deleteAbook = (req, res, next) => {
+    Book.findByIdAndDelete(req.params.book_id)
+    .then(reply => res.status(204).end())
         .catch(next)
+    //  const index = books.findIndex((b) => b.id === parseInt(req.params.book_id));
+    //     if (index === -1) {
+    //       return res.status(404).json({ error: 'Book not found' });
+    //     }
+    //     books.splice(index, 1);
+    //     res.json(books);
 }
 
 module.exports = {

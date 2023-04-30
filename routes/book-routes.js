@@ -1,5 +1,5 @@
 const express = require('express');
-const books = require('../data/books');
+// const books = require('../data/books');
 const bookController = require('../controllers/book_controller')
 const reviewController = require('../controllers/review_controller')
 
@@ -146,18 +146,18 @@ router.route('/:book_id/reviews')
     })
 
     .delete(
-        reviewController.deleteReview
+        reviewController.deleteReviews
     )
       
 router.route('/:book_id/reviews/:review_id')
 
-    .get((req, res, next) => {
+    .get(
         reviewController.createReview
-    })
+    )
 
-    .put((req, res, next) => {
+    .put(
         reviewController.deleteAreview    
-    })
+    )
 
     .post((req, res, next) => {
         res.status(405).json({error: 'This method (POST) is not allowed'})
