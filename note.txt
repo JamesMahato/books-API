@@ -34,3 +34,14 @@ Routing -
 Status codes
 201 - successfull post operation status code
 400 - bad request status code
+
+///////////////////////////////////////////////////////
+
+NoSQL
+(MongoDB <= 16MB)
+
+1) one to (few below>)
+2) one to many (>= 10000)
+3) one to million (>= 1000000)
+
+Embedding - Embedded documents are an efficient and clean way to store related data, especially data that's regularly accessed together.
