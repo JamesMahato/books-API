@@ -3,6 +3,8 @@ const exp = require('express');
 let books = require('./data/books')
 const mongoose = require('mongoose')
 const broute = require('./routes/book-routes')
+const uroute = require('./routes/user-routes')
+const { verifyUser } = require('./middlewares/auth');
 
 const port = process.env.PORT
 
@@ -28,7 +30,9 @@ app.get('/', (request, response) => {
 });
 
 // main path
-app.use('/books', broute)
+app.use('/books', verifyUser, broute)
+// app.use(verifyUser)
+app.use('/users', uroute)
 
 // Error Handling middlewear
 app.use((err, req, res, next) => {
@@ -38,7 +42,7 @@ app.use((err, req, res, next) => {
     res.json({ error: err.message })
 })
 
-// Unkown Path
+// Unknown Path
 app.use((req, res, next) => {
     res.status(404).json({error:"Path not found"})
 })
