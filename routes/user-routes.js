@@ -12,6 +12,7 @@ router.post('/register', (req, res, next) => {
         if(user) {
             return res.status(400).json({ error : 'Duplicate user' })
         }
+
         bcrypt.hash(password, 10, (err, hash) => {
             if(err) return res.status(500).json({ error : err.message})
                 User.create({username, password : hash, fullname, email})
@@ -47,4 +48,5 @@ router.post('/login', (req, res, next) => {
         })
     }).catch(next)
 })
+
 module.exports = router
