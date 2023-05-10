@@ -19,8 +19,15 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : true,
         unique : true
+    },
+    role : {
+        type : String,
+        enum : ['user', 'admin'], // manager roles can be added
+        default : 'user',
     }
 })
+
+// enum = Enumarated type
 
 userSchema.set('toJSON', {
     transform: (document, returnedDoucument) => {

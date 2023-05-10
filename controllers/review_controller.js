@@ -13,7 +13,8 @@ const createReview = (req, res, next) => {
             .then((book) => {
                 if (!book) return res.status(404).json({ error: 'book not found' })
                 const review = {
-                    text: req.body.text
+                    text: req.body.text,
+                    user: req.user.id,
                 }
                 book.reviews.push(review)
                 book.save()
@@ -56,7 +57,10 @@ const editAbook = (req, res, next) => {
                     // to find use map
                 book.reviews = book.reviews.map((r) => {
                     if(r.id === req.params.review_id) {
-                        r.text = req.body.text
+                        // Check for user
+                        if(r.user == req.user.id) {
+                            r.text = req.body.text
+                        }
                     }
                     return r
                 })
@@ -74,8 +78,13 @@ const deleteAreview = (req, res, next) => {
                 if(!book)
                     return res.status(404).json({ error: "book not found "})
                     // to delete use filter
-                    book.reviews = book.reviews.filter((r) => {
-                        return r.id !== req.params.review_id
+                    // book.reviews = book.reviews.filter((r) => {
+                    //     return r.id !== req.params.review_id
+                    // })
+                    book.reviews = book.reviews.find((r) => {
+                        if(r.id == req.params.review_id && r.user == req.user.id) {
+                            return r.id !== req.params.review_id
+                        }
                     })
                     book.save()
                         .then(book => res.status(204).end())

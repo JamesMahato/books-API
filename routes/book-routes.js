@@ -2,16 +2,17 @@ const express = require('express');
 // const books = require('../data/books');
 const bookController = require('../controllers/book_controller')
 const reviewController = require('../controllers/review_controller')
+const { verifyAdmin } = require('../middlewares/auth')
 
 const router = express.Router()
 
 // This makes codes organized rather then writing everthing in one file
 router.route('/')
     .get(
-        
         bookController.getAllbooks
     )
     .post(
+        verifyAdmin,
         bookController.createbook
     )
 

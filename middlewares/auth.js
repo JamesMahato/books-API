@@ -15,4 +15,12 @@ const verifyUser = (req, res, next) => {
     next()
 }
 
-module.exports = { verifyUser }
+const verifyAdmin = (req, res, next) => {
+     if (req.user.role !== 'admin') {
+        return res.status(403).json({error : "You are not an Admin"})
+     } else if (req.user.role == 'admin') {
+       next()
+     }
+}
+
+module.exports = { verifyUser, verifyAdmin }
