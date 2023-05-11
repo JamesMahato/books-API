@@ -55,3 +55,11 @@ npm install jsonwebtoken
 
 db.users.find()
 db.users.updateOne({username : 'testadmin'}, {$set: {role:'admin'}})
+
+
+/////////////////
+
+dedicated image handelling url in api
+
+npm install multer // for handling multipart/form-data
+npm install uuid // to give id to files

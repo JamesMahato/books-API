@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const broute = require('./routes/book-routes')
 const uroute = require('./routes/user-routes')
 const { verifyUser } = require('./middlewares/auth');
+const upload = require('./middlewares/upload');
 
 const port = process.env.PORT
 
@@ -21,6 +22,7 @@ const app = exp();
 // Middle Wear - software that lies between an operating system and the applications running on it(Cerates a response for a request)
 
 app.use(exp.json())
+app.use(exp.static('public'))
 
 // 1st parameter is route and 2nd is req and res
 app.get('/', (request, response) => {
@@ -33,6 +35,11 @@ app.get('/', (request, response) => {
 app.use('/books', verifyUser, broute)
 // app.use(verifyUser)
 app.use('/users', uroute)
+
+// importing uploads from middleware
+app.use('/upload', upload.single('photo'), (req, res, next) => {
+    res.json(req.file)
+})
 
 // Error Handling middlewear
 app.use((err, req, res, next) => {
