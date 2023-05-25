@@ -29,7 +29,10 @@ const bookSchema = new mongoose.Schema({
         default: 'Anonymous'
     },
     // Embedding
-    reviews: [reviewSchema]
+    reviews: [reviewSchema],
+    photo : {
+        type: String 
+    }
 }, {timestamps: true})
 // timestamps store time to server
 
