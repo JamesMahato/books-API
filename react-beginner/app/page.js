@@ -1,17 +1,17 @@
 'use client'
 
-import Counter from "@/components/counter";
-import Feedback from "@/components/feedback";
-import { useState } from "react";
+// import Counter from "@/components/counter";
+// import Feedback from "@/components/feedback";
+import Notes from "@/components/notes";
 
-const Hello = () => {  //props is an object type.
-  return(
-    <>
-    <p> Hello World </p>
-    </>
+// const Hello = () => {  //props is an object type.
+//   return(
+//     <>
+//     <p> Hello World </p>
+//     </>
 
-  )
-}
+//   )
+// }
 
 // const Hello = (props) => {
 //   console.log(props);
@@ -24,16 +24,33 @@ const Hello = () => {  //props is an object type.
 // }
 
 export default function Home() {
-  const now = new Date();
-  const friends = [
-    {name: 'Jessie', age : 25},
-    {name: 'Gustavo', age : 52},
-    {name: 'Hank', age : 49}
-  ]
-  // const name = 'Walter White';
+  // const now = new Date();
+  // const friends = [
+  //   {name: 'Jessie', age : 25},
+  //   {name: 'Gustavo', age : 52},
+  //   {name: 'Hank', age : 49}
+  // ]
+  // // const name = 'Walter White';
 
-  const [count, setCount] = useState(0)
-  const handleClick = () => setCount(count + 1)
+  // const [count, setCount] = useState(0)
+  // const handleClick = () => setCount(count + 1)
+  // const desc = [
+  //       {
+  //         id : 1,
+  //         desc : 'today is chilli',
+  //         important : true
+  //       },
+  //       {
+  //         id: 2 ,
+  //         desc : "css is required for web application",
+  //         important :false
+  //       },
+  //       {
+  //         id: 3 ,
+  //         desc : "What up dog",
+  //         important : true
+  //       }
+  // ]
 
   return (
     // <>
@@ -54,17 +71,16 @@ export default function Home() {
     // {/* <h1> Hello World, React! </h1> */}
     // {/* <p> Current time is {now.toString()}. </p> */}
 
-
     // {/* <Task1/> */}
-
 
     // {/* <Task2/> */}
 
-
     // <Feedback/>
 
-
     // </>
+
+
+    <Notes />
   )
 }
 
