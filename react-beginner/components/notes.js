@@ -89,16 +89,24 @@ export default function Notes() {
         setShowAll(!showAll)
     }
 
+    const h2style = {
+        color: "red",
+        fontStyle: "Italic",
+        fontSize: 20, 
+    }
+
     return (
         <>
             <h1>Notes App</h1>
+            {/* <h2 style={{color:"cyan"}}>Hello World</h2> */}
+            <h2 style={h2style}>Hello World</h2>
             <button onClick={handleImportant}>
                 Show {showAll ? 'Important': 'All'}
             </button>
-            <ul>
+            {/* <ul>
                 {
                     filterNotes.map(note => 
-                        <li key = {note.id}>
+                        <li style={{paddingRight: 10}} key = {note.id}>
                             {note.desc}
                             <>                   </>
                             <button onClick={() => deleteNote(note.id)}>Delete</button>
@@ -106,7 +114,7 @@ export default function Notes() {
 
                         </li>)
                 }
-            </ul>
+            </ul> */}
             <br/>
             <form>
                 <input type="text" value={desc} onChange={handleChange}/> 
@@ -115,7 +123,6 @@ export default function Notes() {
                     editNote ?
                     <button type="button" onClick={handleUpdate}>Update</button>:
                     <button type="button" onClick={handleAdd}>Add</button>
-
                 }
             </form>
         </>

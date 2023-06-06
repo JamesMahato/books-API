@@ -1,9 +1,11 @@
 'use client'
 
+import NavBar from "@/components/navbar";
 // import Counter from "@/components/counter";
 // import Feedback from "@/components/feedback";
 import Notes from "@/components/notes";
-
+import TB from "@/components/table";
+import AddBtn from "@/components/AddButtonnnnn";
 // const Hello = () => {  //props is an object type.
 //   return(
 //     <>
@@ -78,9 +80,12 @@ export default function Home() {
     // <Feedback/>
 
     // </>
-
-
-    <Notes />
+    <>
+      <NavBar/>
+      <AddBtn/>
+      <Notes />
+      <TB/>
+    </>
   )
 }
 
