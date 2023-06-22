@@ -97,12 +97,12 @@ export default function Notes() {
 
     return (
         <>
-            <h1>Notes App</h1>
+            {/* <h1>Notes App</h1> */}
             {/* <h2 style={{color:"cyan"}}>Hello World</h2> */}
-            <h2 style={h2style}>Hello World</h2>
-            <button onClick={handleImportant}>
+            {/* <h2 style={h2style}>Hello World</h2> */}
+            {/* <button onClick={handleImportant}>
                 Show {showAll ? 'Important': 'All'}
-            </button>
+            </button> */}
             {/* <ul>
                 {
                     filterNotes.map(note => 
@@ -115,7 +115,7 @@ export default function Notes() {
                         </li>)
                 }
             </ul> */}
-            <br/>
+            {/* <br/>
             <form>
                 <input type="text" value={desc} onChange={handleChange}/> 
                 {" "}
@@ -124,7 +124,7 @@ export default function Notes() {
                     <button type="button" onClick={handleUpdate}>Update</button>:
                     <button type="button" onClick={handleAdd}>Add</button>
                 }
-            </form>
+            </form> */}
         </>
     )
 }

@@ -1,3 +1,5 @@
 // Files added here will be ignored by git
 // '.' files are hidden
 node_modules
+coverage
+.env

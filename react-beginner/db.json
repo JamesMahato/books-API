@@ -2,7 +2,7 @@
   "notes": [
     {
       "id": 1,
-      "desc": "today is chilli",
+      "desc": " is chilli",
       "important": true
     },
     {
@@ -21,14 +21,14 @@
       "id": 4
     },
     {
-      "desc": "Masu Bhat",
-      "important": true,
-      "id": 6
+      "desc": "asdasd",
+      "important": false,
+      "id": 7
     },
     {
-      "desc": "life is a scam",
+      "desc": "asdasd",
       "important": true,
-      "id": 7
+      "id": 8
     }
   ]
 }

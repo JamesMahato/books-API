@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
+:root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,22 +24,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-} */
-/* body { 
-  background-color: black;
 }
-
-ul{
-  color: whitesmoke;
-  padding-right: 10px;
-}
-
-h1{
-  color: greenyellow;
-  font-size: 40;
-}
-
-button {
-  background-color: aquamarine;
-  padding: 10 10 10 10;
-}  */

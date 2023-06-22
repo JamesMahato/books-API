@@ -5,7 +5,6 @@ import NavBar from "@/components/navbar";
 // import Feedback from "@/components/feedback";
 import Notes from "@/components/notes";
 import TB from "@/components/table";
-import AddBtn from "@/components/AddButtonnnnn";
 // const Hello = () => {  //props is an object type.
 //   return(
 //     <>
@@ -82,9 +81,9 @@ export default function Home() {
     // </>
     <>
       <NavBar/>
-      <AddBtn/>
       <Notes />
       <TB/>
+      {/* <AddBtn/> */}
     </>
   )
 }
