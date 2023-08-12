@@ -7,7 +7,7 @@ const uroute = require('./routes/user-routes')
 const { verifyUser } = require('./middlewares/auth');
 const upload = require('./middlewares/upload');
 
-mongoose.connect('mongodb://127.0.0.1:27017/demo')
+mongoose.connect('mongodb://127.0.0.1:27017/recipe_api/students')
     .then(() => {
         console.log('Connected to mongodb database server');
     })
